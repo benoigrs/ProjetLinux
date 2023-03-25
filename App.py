@@ -37,14 +37,13 @@ latest = current.split(' ')[-1]
 app = dash.Dash(__name__)
 
 app.layout = html.Div([
-    html.H1('Value Dashboard'),
-    html.H2('Current Pernod Ricard Stock: {}'.format(latest), style={'font-size': '40px'}),
+    html.H1('Pernod Ricard Stock'),
+    html.H2('Current: {}'.format(latest), style={'font-size': '40px'}),
     dcc.Graph(
         id='value-graph',
         figure=generate_figure(data)
     )
 ])
 
-if __name__ == '__main__':
-    app.run_server(debug=True, host='0.0.0.0', port="8050")
+app.run_server(debug=True, host='0.0.0.0', port="8050")
 
